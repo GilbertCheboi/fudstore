@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Foodstore</title>
+        {% include 'base/css.html' %}
+        {% block base_head %}{% endblock %}
+    </head>
+    <body>
+      <div class="wrapper row0">
+              <div id="topbar" class="hoc clear"> 
+              
+                  <marquee>
+                  <font color="Green"i class="fa fa-clock-o"></i> Place an order before 4pm for same day delivery !!  </font> |
+                  <i class="fa fa-phone"></i> +254 713 800 038   ||
+                  <i class="fa fa-envelope-o"></i> info@foodstore.ok.ke  |
+                  <a href="#"><i class="fa fa-lg fa-home"></i></a>  |
+                  <a href="#" title="Login"><i class="fa fa-lg fa-sign-in"></i></a> |
+                  <a href="#" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a>  |
+                  <font color="Green"i ></i> Thank you for shopping with us !!  </font> |  
+                  </marquee>
+                
+                </div>
+      </div>
+      {% include 'base/navbar.html' with brand_name='FoodStore' %}
+      <div class='container'>
+        {% if messages %}
+      <div class="alert alert-success messages">
+          {% for message in messages %}
+          <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+              {{ message }}<br/>
+          </span>
+          {% endfor %}
+      </div>
+      {% endif %}
+      {% block content %}{% endblock %}
+    </div>
+
+        {% include 'base/js.html' %}
+        {% block javascript %}
+
+        {% endblock %}
+    </body>
+  </html>

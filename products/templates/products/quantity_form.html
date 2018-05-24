@@ -1,0 +1,5 @@
+<form action="{% url "cart:update" product.id %}" method="POST">
+            {{ quantity_form }}
+            {% csrf_token %}
+            <input type="submit" value="Add to cart">
+        </form>
