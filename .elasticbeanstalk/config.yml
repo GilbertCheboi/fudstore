@@ -1,15 +1,15 @@
 branch-defaults:
   master:
-    environment: Foodstore-env
+    environment: fudstore-env
     group_suffix: null
 environment-defaults:
   Foodstore-env:
     branch: null
     repository: null
 global:
-  application_name: foodstore
+  application_name: fudstore
   branch: null
-  default_ec2_keyname: null
+  default_ec2_keyname: kim
   default_platform: Python 3.6
   default_region: us-east-1
   include_git_submodules: true

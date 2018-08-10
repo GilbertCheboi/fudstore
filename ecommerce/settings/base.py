@@ -22,7 +22,7 @@ SECRET_KEY = '@!-)jwmuzh8btr380g61=g+#&zzei&dz2(&=xbvxztady)_p(r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://foodstore-env.k4hy2mq9uy.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com']
 ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'amazon.gmail.com'
