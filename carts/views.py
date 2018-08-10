@@ -30,11 +30,12 @@ def cart_detail_api_view(request):
             "id": x.id,
             "url": x.get_absolute_url(),
             "name": x.name, 
-            "price": x.price
+            "price": x.price,
+            "quantity": x.quantity
            
             } 
             for x in cart_obj.products.all()]
-    cart_data  = {"products": products, "subtotal": cart_obj.subtotal, "total": cart_obj.total}
+    cart_data  = {"products": products, "quantity": cart_obj.quantity, "subtotal": cart_obj.subtotal, "total": cart_obj.total}
     return JsonResponse(cart_data)
 
 def cart_home(request):
@@ -43,6 +44,7 @@ def cart_home(request):
 
 
 def cart_update(request):
+    
     product_id = request.POST.get('product_id')
     
     if product_id is not None:
@@ -71,27 +73,6 @@ def cart_update(request):
             # return JsonResponse({"message": "Error 400"}, status=400) # Django Rest Framework
     return redirect("cart:home")
 
-def cart_update(request):
-    # Based on the user who is making the request, grab the cart object
-    cart_obj, new_obj = Cart.objects.get_or_create(request)
-    # Get entries in the cart
-    my_carts_current_entries = Entry.objects.filter(cart=my_cart)
-    # Get a list of your products
-    products = Product.objects.all()
-
-    if request.POST:
-        # Get the product's ID from the POST request.
-        product_id = request.POST.get('product_id')
-        # Get the object using our unique primary key
-        product_obj = Product.objects.get(id=product_id)
-        # Get the quantity of the product desired.
-        quantity = request.POST.get('quantity')
-        # Create the new Entry...this will update the cart on creation
-        Entry.objects.create(cart=my_cart, product=product_obj, quantity=quantity)
-        #return HttpResponse('somewhereelse.html')
-
-    return render(request, 'carts/Entry.html', {'my_cart': my_cart, 'my_carts_current_entries': my_carts_current_entries,
-                                              'products': products})
 
 
 def checkout_home(request):
@@ -114,7 +95,7 @@ def checkout_home(request):
     address_qs = None
     has_card = False
     if billing_profile is not None:
-        if request.user.is_authenticated():
+        if request.user.is_authenticated:
             address_qs = Address.objects.filter(billing_profile=billing_profile)
         order_obj, order_obj_created = Order.objects.new_or_get(billing_profile, cart_obj)
         if shipping_address_id:
@@ -167,6 +148,5 @@ def checkout_home(request):
 
 def checkout_done_view(request):
     return render(request, "carts/checkout-done.html", {})
-
 
 

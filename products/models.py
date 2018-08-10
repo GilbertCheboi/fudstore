@@ -27,6 +27,22 @@ class Category(models.Model):
     def get_products(self):
         return Product.objects.filter(category=self)
 
+class SubCategory(models.Model):
+    name = models.CharField(max_length=150, db_index=True)
+    slug = models.SlugField(max_length=150, unique=True ,db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+ 
+    
+ 
+    def __str__(self):
+        return self.name
+
+    def get_products(self):
+        return Product.objects.filter(category=self)
+
+
+
 def get_filename_ext(filepath):
     base_name = os.path.basename(filepath)
     name, ext = os.path.splitext(base_name)
@@ -82,6 +98,8 @@ class ProductManager(models.Manager):
 
 class Product(models.Model):
     category        = models.ForeignKey(Category, related_name='products',default=False)
+    subcategory     = models.ForeignKey(SubCategory, related_name='products',default=False)
+    #quantity        = models.PositiveIntegerField(default=1)
     title           = models.CharField(max_length=120)
     slug            = models.SlugField(blank=True, unique=True)
     description     = models.TextField()

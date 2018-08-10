@@ -52,6 +52,7 @@
                 <p>Cart Total: {{ object.cart.total }}</p>
                 <p>Shipping Total: {{ object.shipping_total }}</p>
                 <p>Order Total: {{ object.total }}</p>
+                <p>Order Timestamp: {{ object.timestamp }}</p>
 
                 <form class='form' method='POST' action="">{% csrf_token %}
                     <a type='submit' class='btn btn-success' href='{% url "cart:success" %}'>Checkout</a>

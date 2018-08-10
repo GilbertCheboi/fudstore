@@ -11,7 +11,7 @@ from analytics.mixins import ObjectViewedMixin, CartAddProductForm
 from carts.models import Cart
 #from .forms import CartAddProductForm
 
-from .models import Product, Category, ProductFile
+from .models import Product, Category, ProductFile, SubCategory
 
 
 class ProductFeaturedListView(ListView):
@@ -50,24 +50,24 @@ class UserProductHistoryView(LoginRequiredMixin, ListView):
 class CategoryList(ListView):
     model = Category
 
-class HouseHold(ListView):
+class Vegetables(ListView):
 
     context_object_name = 'product_list'
-    queryset = Product.objects.filter(category__name='Household')
-    template_name = "products/house_hold.html"
+    queryset = Product.objects.filter(category__name='Vegetables')
+    template_name = "products/vegetables.html"
 
 
-class FreshFood(ListView):
-
-    context_object_name = 'product_list'
-    queryset = Product.objects.filter(category__name='FreshFood')
-    template_name = "products/fresh_food.html"
-
-class Bakery(ListView):
+class TomatoesOnions(ListView):
 
     context_object_name = 'product_list'
-    queryset = Product.objects.filter(category__name='Bakery')
-    template_name = "products/bakery.html"
+    queryset = Product.objects.filter(category__name='TomatoesOnions')
+    template_name = "products/tomatoesonions.html"
+
+class PotatoesRoots(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(category__name='PotatoesRoots')
+    template_name = "products/potatoesroots.html"
 
 class CupBoard(ListView):
 
@@ -104,6 +104,337 @@ class SoftDrinks(ListView):
     context_object_name = 'product_list'
     queryset = Product.objects.filter(category__name='SoftDrinks')
     template_name = "products/soft_drinks.html"
+
+
+class SubCategoryList(ListView):
+
+    model = SubCategory
+#vegetables
+class Spinach(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Spinach')
+    template_name = "products/spinach.html"
+
+class Cabbage(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Cabbage')
+    template_name = "products/cabbage.html"
+
+class Managu(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Managu')
+    template_name = "products/managu.html"
+class Pumpkin(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Pumpkin')
+    template_name = "products/pumpkin.html"
+class PumpkinLeaves(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='PumkinLeaves')
+    template_name = "products/pumpkinleaves.html"
+
+class Peas(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Peas')
+    template_name = "products/peas.html"
+
+class Beans(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Beans')
+    template_name = "products/beans.html"
+
+class Lettuce(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Lettuce')
+    template_name = "products/lettuce.html"
+
+
+class Brocolli(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Brocolli')
+    template_name = "products/brocolli.html"
+
+class Mushroom(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Mushroom')
+    template_name = "products/mushroom.html"
+
+class Butternut(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Butternut')
+    template_name = "products/butternut.html"
+
+class Beetroot(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Beetroot')
+    template_name = "products/beetroot.html"
+class Maize(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Maize')
+    template_name = "products/maize.html"
+
+
+
+class Kales(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Kales')
+    template_name = "products/kales.html"
+
+
+class Cucumber(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Cucumber')
+    template_name = "products/cucumber.html"
+# Fruits
+class Watermelon(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Watermelon')
+    template_name = "products/watermelon.html"
+
+
+class Bananas(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Bananas')
+    template_name = "products/bananas.html"
+
+
+class Mango(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Mango')
+    template_name = "products/mango.html"
+
+class Oranges(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Oranges')
+    template_name = "products/oranges.html"
+class Apples(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Apples')
+    template_name = "products/apples.html"
+class Strawberry(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Strawberry')
+    template_name = "products/strawberry.html"
+class Avocado(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Avocado')
+    template_name = "products/avocado.html"
+class Lemon(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Lemon')
+    template_name = "products/lemon.html"
+
+class Guava(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Guava')
+    template_name = "products/guava.html"
+
+class Grape(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Grape')
+    template_name = "products/grape.html"
+
+class Pineapples(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Pineapples')
+    template_name = "products/pineapples.html"
+
+class Pear(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Pear')
+    template_name = "products/pear.html"
+
+class Passion(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Passion')
+    template_name = "products/passion.html"
+
+class Tomatoes(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Tomatoes')
+    template_name = "products/tomatoes.html"
+
+class GreenOnions(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='GreenOnioins')
+    template_name = "products/greenonions.html"
+
+class RedOnions(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='RedOnions')
+    template_name = "products/redonions.html"
+
+class YellowOnions(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='YellowOnions')
+    template_name = "products/yellowonions.html"
+
+
+
+class Garlic(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Garlic')
+    template_name = "products/garlic.html"
+
+class PilipiliHoho(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='PilipiliHoho')
+    template_name = "products/pilipilihoho.html"
+
+class DaikonRadish(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='DaikonRadish')
+    template_name = "products/daikonradish.html"
+
+class Leeks(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Leeks')
+    template_name = "products/leeks.html"
+
+
+class Zuchini(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Zuchini')
+    template_name = "products/zuchini.html"
+
+
+
+class LeafyOnions(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='LeafOnions')
+    template_name = "products/leafonions.html"
+
+
+
+class Jicama(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Jiacama')
+    template_name = "products/jicama.html"
+
+
+
+class Dhania(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Dhania')
+    template_name = "products/dhania.html"
+
+
+
+class GreenRedChilli(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='GreenRedChilli')
+    template_name = "products/greenredchilli.html"
+
+class Potatoes(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Potatoes')
+    template_name = "products/potatoes.html"
+
+class SweetPotatoes(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='SweetPotatoes')
+    template_name = "products/sweetpotatoes.html"
+
+
+class Carrots(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Carrots')
+    template_name = "products/carrots.html"
+
+
+
+class Cassava(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Cassava')
+    template_name = "products/cassava.html"
+
+
+#Milk
+class PasturisedMilk(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='PasturisedMilk')
+    template_name = "products/pasturisedmilk.html"
+
+
+
+class NonPasturisedMilk(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='NonPasturisedMilk')
+    template_name = "products/nonpasturisedmilk.html"
+
+
+
+class Mursik(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Mursik')
+    template_name = "products/mursik.html"
+class Garlic(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Garlic')
+    template_name = "products/garlic.html"
+
+class Garlic(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Garlic')
+    template_name = "products/garlic.html"
+
+
+
+class Garlic(ListView):
+
+    context_object_name = 'product_list'
+    queryset = Product.objects.filter(subcategory__name='Garlic')
+    template_name = "products/garlic.html"
 
 def get_quantity(request):
     # if this is a POST request we need to process the form data
@@ -305,3 +636,10 @@ def product_detail_view(request, pk=None, *args, **kwargs):
         'object': instance
     }
     return render(request, "products/detail.html", context)
+
+
+
+
+
+
+

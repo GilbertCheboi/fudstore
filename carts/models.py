@@ -16,7 +16,7 @@ class CartManager(models.Manager):
         if qs.count() == 1:
             new_obj = False
             cart_obj = qs.first()
-            if request.user.is_authenticated() and cart_obj.user is None:
+            if request.user.is_authenticated and cart_obj.user is None:
                 cart_obj.user = request.user
                 cart_obj.save()
         else:
@@ -28,12 +28,12 @@ class CartManager(models.Manager):
     def new(self, user=None):
         user_obj = None
         if user is not None:
-            if user.is_authenticated():
+            if user.is_authenticated:
                 user_obj = user
         return self.model.objects.create(user=user_obj)
 
 class Cart(models.Model):
-    user        = models.ForeignKey(User, null=True, blank=True)
+    user        = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     products    = models.ManyToManyField(Product, blank=True)
     subtotal    = models.DecimalField(default=0.00, max_digits=100, decimal_places=2)
     total       = models.DecimalField(default=0.00, max_digits=100, decimal_places=2)
@@ -55,8 +55,8 @@ class Cart(models.Model):
         return True
 
 class Entry(models.Model):
-    product = models.ForeignKey(Product, null=True)
-    cart = models.ForeignKey(Cart, null=True)
+    product = models.ForeignKey(Product, null=True, on_delete=models.CASCADE)
+    cart = models.ForeignKey(Cart, null=True, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
 
     def __str__(self):
@@ -64,10 +64,7 @@ class Entry(models.Model):
 @receiver(post_save, sender=Entry)
 def update_cart(sender, instance, **kwargs):
     line_cost = Decimal(instance.quantity) * Decimal(instance.product.price)
-    #instance.cart.total += line_cost
-    #instance.cart.count += instance.quantity
-    #instance.cart.updated = datetime.now()
-
+    #instance.cart.count = int(instance.cart.count) + int(instance.quantity)
 
 def m2m_changed_cart_receiver(sender, instance, action, *args, **kwargs):
     if action == 'post_add' or action == 'post_remove' or action == 'post_clear':
@@ -91,7 +88,6 @@ def pre_save_cart_receiver(sender, instance, *args, **kwargs):
         instance.total = 0.00
 
 pre_save.connect(pre_save_cart_receiver, sender=Cart)
-
 
 
 

@@ -22,7 +22,8 @@ SECRET_KEY = '@!-)jwmuzh8btr380g61=g+#&zzei&dz2(&=xbvxztady)_p(r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['src-dev.us-east-1.elasticbeanstalk.com', '127.0.0.1']
+#ALLOWED_HOSTS = ['src-dev.us-east-1.elasticbeanstalk.com', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'amazon.gmail.com'
 EMAIL_HOST_USER = 'gilbertcheboi100@gmail.com' 
@@ -213,7 +214,6 @@ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-
 
 
 

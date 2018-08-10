@@ -1,15 +1,15 @@
 branch-defaults:
-  default:
-    environment: src-dev
+  master:
+    environment: Foodstore-env
     group_suffix: null
 environment-defaults:
-  eCommerce-dev:
+  Foodstore-env:
     branch: null
     repository: null
 global:
-  application_name: src
+  application_name: foodstore
   branch: null
-  default_ec2_keyname: '30230192'
+  default_ec2_keyname: null
   default_platform: Python 3.6
   default_region: us-east-1
   include_git_submodules: true
@@ -18,5 +18,5 @@ global:
   platform_version: null
   profile: eb-cli
   repository: null
-  sc: null
+  sc: git
   workspace_type: Application

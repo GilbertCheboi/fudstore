@@ -10,9 +10,9 @@
     <tr>
       <th>#</th>
       <th>Product Name</th>
-      <th>Quantity</th>
-      <th>Unit Price</th>
-      <th>Total Price</th>
+      <!--<th>Quantity</th>-->
+      <th>Product Price</th>
+      <!--<th>SubTotal</th>-->
 
 
     </tr>
@@ -26,9 +26,9 @@
         {% include 'carts/snippets/remove-product.html' with product_id=product.id %}
       </td>
       
-      <td>{{ obj.quantity }}</td>
+     <!-- <td>{{ entry.quantity }}</td>-->
       <td>{{ product.price }}</td>
-      <td>{{ Total.price }}</td>
+      
       
     </tr>
     {% endfor %}

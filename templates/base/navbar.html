@@ -4,6 +4,59 @@
 
 {% url 'login' as login_url %}
 {% url 'logout' as logout_url %}
+{% url 'spinach' as spinach_url %}
+{% url 'cabbage' as cabbage_url %}
+{% url 'managu' as managu_url %}
+{% url 'pumpkin' as pumpkin_url %}
+{% url 'pumpkinleaves' as pumpkinleaves_url %}
+{% url 'peas' as peas_url %}
+{% url 'lettuce' as lettuce_url %}
+{% url 'brocolli' as brocolli_url %}
+{% url 'mushroom' as mushroom_url %}
+{% url 'butternut' as butternut_url %}
+{% url 'beetroot' as beetroot_url %}
+{% url 'beans' as beans_url %}
+{% url 'maize' as maize_url %}
+{% url 'kales' as kales_url %}
+{% url 'cucumber' as cucumber_url %}
+{% url 'watermelon' as watermelon_url %}
+{% url 'bananas' as bananas_url %}
+{% url 'mango' as mango_url %}
+{% url 'oranges' as oranges_url %}
+{% url 'apples' as apples_url %}
+{% url 'strawberry' as strawberry_url %}
+{% url 'avocado' as avocado_url %}
+{% url 'lemon' as lemon_url %}
+{% url 'guava' as guava_url %}
+{% url 'grape' as grape_url %}
+{% url 'pineapples' as pineapples_url %}
+{% url 'pear' as pear_url %}
+{% url 'tomatoes' as tomatoes_url %}
+{% url 'greenonions' as greenonions_url %}
+{% url 'redonions' as redonions_url %}
+{% url 'yellowonions' as yellowonions_url %}
+{% url 'garlic' as garlic_url %}
+{% url 'pilipilihoho' as pilipilihoho_url %}
+{% url 'daikonradish' as daikonradish_url %}
+{% url 'leeks' as leeks_url %}
+{% url 'zuchini' as zuchini_url %}
+{% url 'leafyonions' as leafyonions_url %}
+{% url 'jicama' as jicama_url %}
+{% url 'dhania' as dhania_url %}
+{% url 'greenredchilli' as greenredchilli_url %}
+{% url 'passion' as passion_url %}
+{% url 'potatoes' as potatoes_url %}
+{% url 'sweetpotatoes' as sweetpotatoes_url %}
+{% url 'carrots' as carrots_url %}
+{% url 'cassava' as cassava_url %}
+{% url 'pasturisedmilk' as pasturisedmilk_url %}
+{% url 'nonpasturisedmilk' as nonpasturisedmilk_url %}
+{% url 'mursik' as mursik_url %}
+{% url 'fruits' as fruits_url %}
+{% url 'milk' as milk_url %}
+{% url 'vegetables' as vegetables_url %}
+{% url 'tomatoesonions' as tomatoesonions_url %}
+{% url 'potatoesroots' as potatoesroots_url %}
 {% url 'register' as register_url %}
 
 {% url 'account:home' as account_url %}
@@ -21,34 +74,84 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item {% if request.path == bakery_url %}active{% endif %}">
-        <a class="nav-link" href='{% url "bakery" %}'>Bakery</a>
-      </li>
-      <li class="nav-item {% if request.path == fruits_url %}active{% endif %}">
-        <a class="nav-link" href='{% url "fruits" %}'>Fruits</a>
-      </li>
-      <li class="nav-item {% if request.path == milk_url %}active{% endif %}">
-        <a class="nav-link" href='{% url "milk" %}'>Milk</a>
-      </li>
-      <li class="nav-item {% if request.path == softdrinks_url %}active{% endif %}">
-        <a class="nav-link" href='{% url "soft_drinks" %}'>SoftDrinks</a>
-      </li>
-      <li class="nav-item {% if request.path == freshfood_url %}active{% endif %}">
-        <a class="nav-link" href='{% url "fresh_food" %}'>Freshfood</a>
-      </li>
-      <li class="nav-item {% if request.path == meat_url %}active{% endif %}">
-        <a class="nav-link" href='{% url "meat" %}'>Freshmeat</a>
-      </li>
-      <li class="nav-item {% if request.path == drinks_url %}active{% endif %}">
-        <a class="nav-link" href='{% url "drinks" %}'>Drinks</a>
-      </li>
-      <li class="nav-item {% if request.path == household_url %}active{% endif %}">
-        <a class="nav-link" href='{% url "house_hold" %}'>Household</a>
-      </li>
-      <li class="nav-item {% if request.path == cupboard_url %}active{% endif %}">
-        <a class="nav-link" href='{% url "cup_board" %}'>CupBoard</a>
-      </li>
+      <li class="nav-item dropdown {% if request.path == meat_url %}active{% endif %}">
+        <a class="nav-link dropdown-toggle" href='#' id="navbarDropdown" role="button" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Vegetables</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item {% if request.path == vegetables_url %}active{% endif %}" href="{{ vegetables_url }}">Home</a>
+          <a class="dropdown-item" href="{{ cabbage_url }}#cabbage">Cabbage</a>
+          <a class="dropdown-item" href="{{ spinach_url }}#spinach">Spinach</a>
+          <a class="dropdown-item" href="{{ managu_url }}#managu">Managu</a>
+          <a class="dropdown-item" href="{{ pumpkin_url }}#pumpkin">Pumpkin</a>
+          <a class="dropdown-item" href="{{ pumpkinleaves_url }}#pumpkinleaves">Pumpkin Leaves</a>
+          <a class="dropdown-item" href="{{ peas_url }}#peas">Peas(Minji)</a>
+          <a class="dropdown-item" href="{{ lettuce_url }}#lettuce">Lettuce</a>
+          <a class="dropdown-item" href="{{ brocolli_url }}#brocolli">Brocolli</a>
+          <a class="dropdown-item" href="{{ mushroom_url }}#mushroom">Mushrooms</a>
+          <a class="dropdown-item" href="{{ butternut_url }}#butternut">Butternut</a>
+          <a class="dropdown-item" href="{{ beetroot_url }}#beetroot">Beetroot</a>
+          <a class="dropdown-item" href="{{ beans_url }}#beans">Fresh Beans</a>
+          <a class="dropdown-item" href="{{ maize_url }}#maize">Fresh Maize</a>
+          <a class="dropdown-item" href="{{ kales_url }}#kales">Sukumawiki(kales)</a>
+          <a class="dropdown-item" href="{{ cucumber_url }}#cucumber">Cucumber</a>
+      <li class="nav-item dropdown {% if request.path == meat_url %}active{% endif %}">
+        <a class="nav-link dropdown-toggle" href='#' id="navbarDropdown" role="button" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Tomatoes/Onions</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item {% if request.path == tomatoesonions_url %}active{% endif %}" href="{{ tomatoesonions_url }}">Home</a>
+          <a class="dropdown-item" href="{{ tomatoes_url }}">Tomatoes</a>
+          <a class="dropdown-item" href="{{ greenonions_url }}">Green Onions</a>
+          <a class="dropdown-item" href="{{ redonions_url }}">Red Onions</a>
+          <a class="dropdown-item" href="{{ yellowonions_url }}">Yellow Onions</a>
+          <a class="dropdown-item" href="{{ garlic_url }}">Garlic</a>
+          <a class="dropdown-item" href="{{ pilipilihoho_url }}">Pilipili Hoho</a>
+          <a class="dropdown-item" href="{{ daikonradish_url }}">Daikon Radish</a>
+          <a class="dropdown-item" href="{{ leeks_url }}">Leeks</a>
+          <a class="dropdown-item" href="{{ zuchini_url }}">Zuchini</a>
+          
+          <a class="dropdown-item" href="{{ leafyonions_url }}">Leaf Onions</a>
+          <a class="dropdown-item" href="{{ jicama_url }}">Jicama</a>
+          <a class="dropdown-item" href="{{ dhania_url }}">Dhania</a>
+          <a class="dropdown-item" href="{{ greenredchilli_url }}">Green and Red Chilli</a>
+     
+      <li class="nav-item dropdown {% if request.path == meat_url %}active{% endif %}">
+        <a class="nav-link dropdown-toggle" href='#' id="navbarDropdown" role="button" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Potatoes/Roots</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item {% if request.path == potatoesroots_url %}active{% endif %}" href="{{ potatoesroots_url }}">Home</a>
+          <a class="dropdown-item" href="{{ potatoes_url }}">Potatoes</a>
+          <a class="dropdown-item" href="{{ sweetpotatoes_url }}">Sweet Potatoes</a>
+          <a class="dropdown-item" href="{{ carrots_url }}">Carrots</a>
+          <a class="dropdown-item" href="{{ cassava_url }}">Cassava</a>
 
+      <li class="nav-item dropdown {% if request.path == meat_url %}active{% endif %}">
+        <a class="nav-link dropdown-toggle" href='#' id="navbarDropdown" role="button" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Fresh Fruits</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item {% if request.path == fruits_url %}active{% endif %}" href="{{ fruits_url }}">Home</a>
+          <a class="dropdown-item" href="{{ watermelon_url }}">Watemelon</a>
+          <a class="dropdown-item" href="{{ bananas_url }}">Bananas</a>
+          <a class="dropdown-item" href="{{ mango_url }}">Mango</a>
+          <a class="dropdown-item" href="{{ oranges_url }}">Oranges</a>
+          <a class="dropdown-item" href="{{ apples_url }}">Apples</a>
+          <a class="dropdown-item" href="{{ strawberry_url }}">Strawberry</a>
+          <a class="dropdown-item" href="{{ avocado_url }}">Avocado</a>
+          <a class="dropdown-item" href="{{ lemon_url }}">Lemon</a>
+          <a class="dropdown-item" href="{{ guava_url }}">Guava</a>
+          <a class="dropdown-item" href="{{ grape_url }}">GrapeFruits</a>
+          <a class="dropdown-item" href="{{ pineapples_url }}">Pineapples</a>
+          <a class="dropdown-item" href="{{ pear_url }}">Pear</a>
+          <a class="dropdown-item" href="{{ passion_url }}">Passion</a>
+      <li class="nav-item dropdown {% if request.path == meat_url %}active{% endif %}">
+        <a class="nav-link dropdown-toggle" href='#' id="navbarDropdown" role="button" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Milk</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item {% if request.path == milk_url %}active{% endif %}" href="{{ milk_url }}">Home</a>
+          <a class="dropdown-item" href="{{ pasturisedmilk_url }}">Pasturised Milk</a>
+          <a class="dropdown-item" href="{{ nonpasturisedmilk_url }}">Non Pasturised Milk</a>
+          <a class="dropdown-item" href="{{ mursik_url }}">Mursik!</a>
+          
+
+          
+          
+      </li>
+      
+     
 
 
       {% if request.user.is_authenticated %}
@@ -58,9 +161,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item {% if request.path == account_url %}active{% endif %}" href="{{ account_url }}">Home</a>
-          <a class="dropdown-item" href="{{ account_url }}#billing">Billing</a>
-          <a class="dropdown-item" href="{% url "account:user-product-history" %}">History</a>
-          <a class='dropdown-item' href='{% url "library" %}'>Library</a>
+          <a class='list-group-item' href='{% url "orders:list" %}'>Prev. Orders</a>
+
+          
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{ logout_url }}">Logout</a>
         </div>
@@ -74,7 +177,7 @@
       </li>
       {% endif %}
       <li class="nav-item {% if request.path == cart_url %}active{% endif %}">
-        <a class="nav-link" href="{{ cart_url }}"><span class='navbar-cart-count'>{{ request.session.cart_items }}</span> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+        <a class="nav-link" href="{{ cart_url }}"><span class='navbar-cart-count'>{{ request.session.cart_items }}</span> <i class="fa fa-shopping-cart" aria-hidden="true" aria-haspopup="true"></i></a>
       </li>
 
        <!--  <li class="nav-item dropdown">
@@ -89,7 +192,14 @@
           </li> -->
 
     </ul>
-    {% include 'search/snippets/search-form.html' %}
+    <form method='GET' action='{% url "search:query" %}' class="form my-2 my-lg-0 search-form">
+  <div class='input-group'>
+    <input class="form-control" type="text" placeholder="Search" name='q' aria-label="Search" value='{{ request.GET.q }}'>
+    <span class='input-group-btn'>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </span>
+    </div>
+</form>
   </div>
 </div>
 </nav>
