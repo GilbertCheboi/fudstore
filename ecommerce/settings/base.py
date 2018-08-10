@@ -23,7 +23,7 @@ SECRET_KEY = '@!-)jwmuzh8btr380g61=g+#&zzei&dz2(&=xbvxztady)_p(r'
 DEBUG = True
 
 ALLOWED_HOSTS = ['fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com']
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'amazon.gmail.com'
 EMAIL_HOST_USER = 'gilbertcheboi100@gmail.com' 
