@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = '@!-)jwmuzh8btr380g61=g+#&zzei&dz2(&=xbvxztady)_p(r'
+SECRET_KEY = ' '
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -197,23 +197,23 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 SECURE_FRAME_DENY               = False
 
 
-AWS_STORAGE_BUCKET_NAME = 'ecommerce-gilbert'
-AWS_S3_REGION_NAME = 'us-east-2'  # e.g. us-east-2
-AWS_ACCESS_KEY_ID = 'AKIAJSVVBAFBSCQH7JGA'
+#AWS_STORAGE_BUCKET_NAME = 'ecommerce-gilbert'
+#AWS_S3_REGION_NAME = 'us-east-2'  # e.g. us-east-2
+#AWS_ACCESS_KEY_ID = 'AKIAJSVVBAFBSCQH7JGA'
 
-AWS_SECRET_ACCESS_KEY = 'yVBzCSRx2mpBO7FS62mgDiOHP+n9QAg/qH/CDxpd'
+#AWS_SECRET_ACCESS_KEY = 'yVBzCSRx2mpBO7FS62mgDiOHP+n9QAg/qH/CDxpd'
 
 # Tell django-storages the domain to use to refer to static files.
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 # Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
 # you run `collectstatic`).
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#STATICFILES_LOCATION = 'static'
+#STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+#MEDIAFILES_LOCATION = 'media'
+#DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
 
