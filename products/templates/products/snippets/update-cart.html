@@ -4,7 +4,9 @@
     {% if product in cart.products.all %}
         <div class='btn-group'> <a class='btn btn-link' href='/cart/'>In cart</a> <button type='submit' class='btn btn-link'>Remove?</button></div>
     {% else %}
-        <button type='submit'  class='btn btn-success'>Add to cart</button>
+    <div>
+        <button type='submit'  class='btn btn-success'>Add to Cart <h5><i class="fa fa-shopping-cart"></i></h5></button>
+     </div>
     {% endif %}
     </span>
 </form>

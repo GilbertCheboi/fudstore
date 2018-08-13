@@ -13,15 +13,16 @@
                     <img src='{{ object.image.url }}' class='img-fluid' />
                 {% endif %}
         </div>
-<div class='col-12 col-md-6'>
+ <!--<div class='col-12 col-md-6'>
 
-    <form  action='{% url "cart:update" %}' method="post">
+   <form  action='{% url "cart:update" %}' method="post">
         {% csrf_token %}
         <font color="block">{{ form }} </font>       
     {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
-    </form>
+    </form> 
 
-</div>
+</div>-->
+{% include 'products/snippets/update-cart.html' with product=object cart=cart %} 
 </div>
 
 

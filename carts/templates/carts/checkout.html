@@ -44,15 +44,15 @@
         </div>
 
             {% else %}
-                <h1>Finalize Checkout</h1>
-                <p>Cart Items: {% for product in object.cart.products.all %}{{ product }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-                <p>Shipping Address: {{ object.shipping_address_final }}</p>
+                <h3>Finalize Checkout</h3>
+                <p><h5>Cart Items:</h5> {% for product in object.cart.products.all %}{{ product }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+                <p><h5>Shipping Address:</h5> {{ object.shipping_address_final }}</p>
                 <p>Billing Address: {{ object.billing_address_final }}</p>
             <!--    <p>Payment Method: {{ billing_profile.default_card }} (<a href="{{ billing_profile.get_payment_method_url }}?next={{ request.build_absolute_uri }}">Change</a>)</p> -->
-                <p>Cart Total: {{ object.cart.total }}</p>
-                <p>Shipping Total: {{ object.shipping_total }}</p>
-                <p>Order Total: {{ object.total }}</p>
-                <p>Order Timestamp: {{ object.timestamp }}</p>
+                <p><h5>Cart Total:</h5> Ksh.{{ object.cart.total }}</p>
+                <p><h5>Delivery Fee:</h5>Ksh. {{ object.shipping_total }}</p>
+                <p><h5>Order Total:</h5> Ksh.{{ object.total }}</p>
+                <p><h5>Order Timestamp:</h5> {{ object.timestamp }}</p>
 
                 <form class='form' method='POST' action="">{% csrf_token %}
                     <a type='submit' class='btn btn-success' href='{% url "cart:success" %}'>Checkout</a>
