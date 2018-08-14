@@ -199,9 +199,9 @@ SECURE_FRAME_DENY               = False
 
 AWS_STORAGE_BUCKET_NAME = 'ecommerce-foodstore'
 AWS_S3_REGION_NAME = 'us-east-2'  # e.g. us-east-2
-AWS_ACCESS_KEY_ID = 'AKIAIWUCCK4CVBIFLNGA'
+#AWS_ACCESS_KEY_ID = 'AKIAJ2RXRPFZGOIDEMAA'
 
-AWS_SECRET_ACCESS_KEY = 'q/ELKmZLaA01j14JG2z0tHWFEDCMXVnrq0faBXBh'
+#AWS_SECRET_ACCESS_KEY = 'hYOdXGwf7WW0EcTymlw34xhmEw7maXHZvVDfdCMG'
 
 # Tell django-storages the domain to use to refer to static files.
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
