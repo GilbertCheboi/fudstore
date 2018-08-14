@@ -97,8 +97,7 @@ from .views import home_page, about_page, contact_page
 urlpatterns = [
     url(r'^$', ProductListView.as_view(), name='list'),
     url(r'^about/$', about_page, name='about'),
-    #url(r'^about/$', quantity_form, name='quantity_form'),
-    #url(r'^accounts/login/$', RedirectView.as_view(url='/login')),
+    url(r'^accounts/login/$', RedirectView.as_view(url='/login')),
     url(r'^accounts/$', RedirectView.as_view(url='/account')),
     url(r'^account/', include("accounts.urls", namespace='account')),
     url(r'^accounts/', include("accounts.passwords.urls")),
