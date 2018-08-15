@@ -22,8 +22,8 @@ SECRET_KEY = '@!-)jwmuzh8btr380g61=g+#&zzei&dz2(&=xbvxztady)_p(r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com']
+#ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'amazon.gmail.com'
 EMAIL_HOST_USER = 'gilbertcheboi100@gmail.com' 
@@ -195,8 +195,6 @@ CSRF_COOKIE_SECURE              = False
 SECURE_HSTS_SECONDS             = None
 SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 SECURE_FRAME_DENY               = False
-
-
 
 
 
