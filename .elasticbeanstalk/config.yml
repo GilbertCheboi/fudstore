@@ -6,6 +6,9 @@ environment-defaults:
   Foodstore-env:
     branch: null
     repository: null
+  fudstore-env:
+    branch: null
+    repository: null
 global:
   application_name: fudstore
   branch: null
