@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = '@!-)jwmuzh8btr380g61=g+#&zzei&dz2(&=xbvxztady)_p(r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com','fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com']
 #ALLOWED_HOSTS = []
