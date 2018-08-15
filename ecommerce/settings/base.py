@@ -15,34 +15,30 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!#qi!=$m+f3c&^&829k9bz3)4xc9)ax2^&l*bb05f2vvayl*+1'
+SECRET_KEY = ' '
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = [ 'fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com']
 
-EMAIL_HOST = 'amazon.gmail.com'
-EMAIL_HOST_USER = 'gilbertcheboi100@gmail.com' 
-EMAIL_HOST_PASSWORD = '30230192g'
+EMAIL_HOST = 'amzon.gmail.com'
+EMAIL_HOST_USER = 'gilbertcheboi100@gmail.com' # sendgrid
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'yourpassword')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Python ecommerce <gilbertcheboi100@gmail.com>'
 BASE_URL = '127.0.0.1:8000'
 
-
 MANAGERS = (
-    ('Justin Mitchel', "gilbertcheboi100@gmail.com"),
+    ('Gilbert Cheboi', "gilbertcheboi100@gmail.com"),
 )
 
 ADMINS = MANAGERS
-
-
 
 # Application definition
 
@@ -79,13 +75,13 @@ FORCE_INACTIVE_USER_ENDSESSION= False
 
 
 
-MAILCHIMP_API_KEY = "717d0854ed20fed3be3689a3f125915c-us17"
+MAILCHIMP_API_KEY = os.environ.get("MAILCHIMP_API_KEY")
 MAILCHIMP_DATA_CENTER = "us17"
-MAILCHIMP_EMAIL_LIST_ID = "e2ef12efee"
+MAILCHIMP_EMAIL_LIST_ID = os.environ.get("MAILCHIMP_EMAIL_LIST_ID")
 
 
-STRIPE_SECRET_KEY = "sk_test_cu1lQmcg1OLffhLvYrSCp5XE"
-STRIPE_PUB_KEY = 'pk_test_PrV61avxnHaWIYZEeiYTTVMZ'
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "sk_test_cu1lQmcg1OLffhLvYrSCp5XE")
+STRIPE_PUB_KEY = os.environ.get("STRIPE_PUB_KEY", 'pk_test_PrV61avxnHaWIYZEeiYTTVMZ')
 
 
 MIDDLEWARE = [
@@ -155,7 +151,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles' #'UTC'
 
 USE_I18N = True
 
@@ -182,8 +178,6 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
 
 PROTECTED_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "protected_media")
 
-
-
 from ecommerce.aws.conf import *
 
 
@@ -196,5 +190,7 @@ CSRF_COOKIE_SECURE              = False
 SECURE_HSTS_SECONDS             = None
 SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 SECURE_FRAME_DENY               = False
+
+
 
 
