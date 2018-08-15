@@ -25,7 +25,7 @@ SECRET_KEY = '!#qi!=$m+f3c&^&829k9bz3)4xc9)ax2^&l*bb05f2vvayl*+1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com']
 
 EMAIL_HOST = 'amazon.gmail.com'
 EMAIL_HOST_USER = 'gilbertcheboi100@gmail.com' 
