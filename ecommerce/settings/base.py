@@ -22,7 +22,7 @@ SECRET_KEY = '@!-)jwmuzh8btr380g61=g+#&zzei&dz2(&=xbvxztady)_p(r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com','fudstore-env.ckuzj6mhuz.us-east-1.elasticbeanstalk.com']
 #ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'amazon.gmail.com'
@@ -199,10 +199,10 @@ SECURE_FRAME_DENY               = False
 
 
 AWS_STORAGE_BUCKET_NAME = 'bucket-foodstore'
-AWS_S3_REGION_NAME = ' '  # e.g. us-east-2
+AWS_S3_REGION_NAME = ' us-east-2'  # e.g. us-east-2
 AWS_ACCESS_KEY_ID =  ' '
 
-AWS_SECRET_ACCESS_KEY =  'm+lNyGexc+Clzoo0ZE71YSIyZ5c8x1oSuLWs0tx4'
+AWS_SECRET_ACCESS_KEY =  ' '
 
 # Tell django-storages the domain to use to refer to static files.
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
