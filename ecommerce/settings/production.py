@@ -24,10 +24,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['foodstore-env.c3b53zbgu7.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['grocery-env.v6tp284nwm.us-east-1.elasticbeanstalk.com']
 
 EMAIL_HOST = 'amazon.gmail.com'
-EMAIL_HOST_USER = 'gilbertcheboi100@gmail.com' # sendgrid
+EMAIL_HOST_USER = 'gilbertchebooooi100@gmail.com' # sendgrid
 EMAIL_HOST_PASSWORD =  os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
