@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['grocery-env.v6tp284nwm.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'amazon.gmail.com'
 EMAIL_HOST_USER = 'gilbertchebooooi100@gmail.com' # sendgrid
