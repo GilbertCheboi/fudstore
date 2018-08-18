@@ -213,5 +213,3 @@ SECURE_FRAME_DENY               = False
 
 
 
-
-
