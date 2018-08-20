@@ -1,4 +1,6 @@
+
 # aws keys
+.env
 src/ecommerce/aws/ignore2.py
 
 
