@@ -22,7 +22,7 @@ SECRET_KEY = '!#qi!=$m+f3c&^&829k9bz3)4xc9)ax2^&l*bb05f2vvayl*+1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['local', '127.0.0.1']
 
 EMAIL_HOST = 'amazon.gmail.com'
 EMAIL_HOST_USER = 'gilbertcheboi100@gmail.com' 
@@ -199,22 +199,7 @@ SECURE_FRAME_DENY               = False
 
 
 
-AWS_STORAGE_BUCKET_NAME = 'grocery-bucket'
-AWS_S3_REGION_NAME = 'us-east-2'  # e.g. us-east-2
-AWS_ACCESS_KEY_ID = 'AKIAIIOMLJFU5VAS5NEA'
-AWS_SECRET_ACCESS_KEY = 'Ig+BrSn+eZIv2u0cb7IPLiHZ2aNJzjYA+p2L8nuv'
 
-# Tell django-storages the domain to use to refer to static files.
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-
-# Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
-# you run `collectstatic`).
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-
-MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
 
