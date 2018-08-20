@@ -1,7 +1,7 @@
 
 # aws keys
 .env
-src/ecommerce/aws/ignore2.py
+ecommerce/aws/ignore2.py
 
 
 # Elastic Beanstalk Files
